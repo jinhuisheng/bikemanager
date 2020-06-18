@@ -1,16 +1,17 @@
 <template>
   <div>
     <el-menu router mode="vertical" default-active="users" class="el-menu-vertical-demo">
-      <el-menu-item index="users">
+      <el-menu-item index="/data/users">
         用户
       </el-menu-item>
-      <el-menu-item index="bikes">
+      <el-menu-item index="/data/bikes">
         车辆
       </el-menu-item>
-      <el-menu-item index="rider">
+      <el-menu-item index="/data/rider">
         骑手
       </el-menu-item>
     </el-menu>
+    <router-view></router-view>
   </div>
 </template>
 
