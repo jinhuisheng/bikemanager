@@ -8,6 +8,7 @@ import bikes from '../views/bikes'
 import rider from "../views/rider";
 import login from "../views/login";
 import index from "../views/index";
+import userDetail from "../views/userDetail";
 
 
 Vue.use(Router)
@@ -46,6 +47,10 @@ let router = new Router({
               path: 'rider',
               name: rider,
               component: rider
+            }, {
+              path: 'userDetail',
+              name: userDetail,
+              component: userDetail
             }]
         }, {
           path: '/status',

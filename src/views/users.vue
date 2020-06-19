@@ -13,6 +13,17 @@
         prop="address"
         label="地址">
       </el-table-column>
+      <el-table-column
+        fixed="right"
+        label="操作"
+        width="100">
+        <template slot-scope="scope">
+          <router-link :to="{path:'userDetail/'+ scope.row.name}">
+            <el-button type="text" size="small">查看</el-button>
+          </router-link>
+          <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
+        </template>
+      </el-table-column>
     </el-table>
     <el-pagination
       layout="prev, pager, next" @current-change="currentPage"
@@ -23,6 +34,7 @@
 
 <script type="es6">
 import {getUsersUrl} from "../api/api";
+import userDetail from "./userDetail";
 
 export default {
     name: "users",
@@ -47,12 +59,17 @@ export default {
             }
             getUsersUrl(obj).then(res => {
                 this.items = res.data.data
-                this.pagination=res.data.pagination
+                this.pagination = res.data.pagination
             })
         },
         currentPage(value) {
             this.pagination.current_page = value
             this.getIterms()
+        },
+        handleClick(row) {
+            console.log(row);
+            console.log(row.name)
+            console.log(row.address)
         }
     },
     mounted() {
