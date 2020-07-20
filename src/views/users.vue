@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width:80%;float:right">
     <h1>用户管理</h1>
     <el-table
       :data="items"

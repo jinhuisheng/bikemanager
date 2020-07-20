@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <el-menu router mode="vertical" default-active="users" class="el-menu-vertical-demo">
+  <div style="width: 100%; margin: 0px;padding: 0px;">
+    <el-menu router mode="vertical" default-active="users" class="el-menu-vertical-demo" style="width: 10%;float:left">
       <el-menu-item index="/data/users">
         用户
       </el-menu-item>
